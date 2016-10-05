@@ -1,17 +1,35 @@
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
+  $(document).ready( function() {
 
-        reader.onload = function (e) {
-          console.log(e);
-          $("#imgWrap").html('<img src="' + e.target.result + '">');
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
+
+function loadPage(href) {
+	if(href === '/') {
+		$("#content").load("http://localhost:9999/pages/home.html");
+	}
+	else {
+		$("#content").load("http://localhost:9999" + href );
+	}
+	 
 }
+loadPage(window.location.pathname);
 
 
 
-$("#img").change(function(){
-    readURL(this);
+var $nav = $("#nav"),
+ 	$content = $("#content");
+
+ 	$nav.find("a").click(function (event) {
+ 		var href = $(this).attr("href");
+
+ 		history.pushState(null, null, href);
+
+ 		loadPage(href);
+
+ 		event.preventDefault();
+ 	});
+
+
+
 });
+
+
+

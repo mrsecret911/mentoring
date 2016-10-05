@@ -3,11 +3,10 @@ var connect = require('gulp-connect');;
 
 gulp.task('connect', function() {
   connect.server({
-  	root: 'public'
+  	root: 'public',
+  	port: 9999
   });
 });
 
 
-gulp.task('default', function() {
-  // place code for your default task here
-});
+gulp.task('default', ['connect']);
