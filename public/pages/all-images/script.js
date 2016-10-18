@@ -1,9 +1,3 @@
-<div class="row">
-	<div id="allImages"></div>
-</div>
-
-
-<script>
 var allImages = localStorage.getItem("allIamges");
 var $allImages = $("#allImages");
 
@@ -12,4 +6,3 @@ if(allImages) {
 		$allImages.append('<div class="col-xs-3"><img src="' + el.src + '"></div>');
 	});	
 }
-</script>

@@ -1,33 +1,3 @@
-<!--<div class="row">
-  <div class="col-xs-3">
-    <div class="input-group">
-      <label class="input-group-btn">
-        <span class="btn btn-primary">
-          Browse&hellip; <input type="file" style="display: none;" multiple id="img">
-        </span>
-      </label>
-      <input type="text" class="form-control" readonly>
-    </div>
-  </div>
-  <div class="col-xs-9">
-    <div id="imgWrap"></div>
-  </div>
-</div>-->
-
-
-
-<div id="branding"  style="float: left;"></div><br />
-    <div id="content">Loading...</div>
-
-
-
-
-
-
-
-<script src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-
       google.load('search', '1');
 
       var imageSearch;
@@ -112,4 +82,3 @@
         google.search.Search.getBranding('branding');
       }
       google.setOnLoadCallback(OnLoad);
-    </script>

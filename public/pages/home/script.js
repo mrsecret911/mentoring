@@ -1,25 +1,4 @@
-<div class="row">
-  <div class="col-xs-3">
-    <div class="input-group">
-      <label class="input-group-btn">
-        <span class="btn btn-primary">
-          Browse&hellip; <input type="file" style="display: none;" multiple id="img">
-        </span>
-      </label>
-      <input type="text" class="form-control" readonly>
-    </div>
-  </div>
-  <div class="col-xs-9">
-    <div id="imgWrap"></div>
-  </div>
-</div>
-
-
-
-
- <script type="text/javascript">
-
-      // We can attach the `fileselect` event to all file inputs on the page
+// We can attach the `fileselect` event to all file inputs on the page
       $(document).on('change', ':file', function () {
         var input = $(this),
                 numFiles = input.get(0).files ? input.get(0).files.length : 1,
@@ -44,13 +23,9 @@
       });
 
 
-
-
-
       var allImages = localStorage.getItem("allIamges");
       if(allImages){
         var imgArr = JSON.parse(allImages);
-        console.log(imgArr);
         $("#imgWrap").html('<img src="' + imgArr[imgArr.length - 1].src + '">');
       }
 
@@ -70,7 +45,6 @@
                 src: src
               });
               localStorage.setItem('allIamges', JSON.stringify(allImages));
-             console.log(allImages);
             }
             else {
               var allImages = [{
@@ -89,4 +63,3 @@
       $("#img").change(function () {
         readURL(this);
       });
-    </script>
